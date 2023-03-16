@@ -10,5 +10,38 @@ const connectorsPluralFuture = ['are conspiring to','are plotting to', 'are plan
 const connectorsPluralPast = ['have already completely', 'have already'];
 const verbs = ['ruin', 'destroy', 'inseminate', 'infiltrate', 'blow up', 'overthrow', 'seize', 'destabilize', 'uncover', 'defend', 'follow', 're-create', 'inform', 'irritate', 'clean', 'melt', 'provide', 'reduce', 'retire', 'surprise', 'taste', 'desert', 'hijack', 'pickpocket', 'offend', 'smuggle', 'terrorize', 'vandalize', 'aid', 'sniff', 'insult', 'move', 'kill', 'replace', 'antagonize'];
 
+const spyMessage = () => {
+    const singularOrPlural = Math.floor(Math.random() * 2);
+    const pastOrFuture = Math.floor(Math.random() * 2);
+    let subject;
+    let connector;
+    let verb = verbs[Math.floor(Math.random() * verbs.length)];
+    let object = entityTwo[Math.floor(Math.random() * entityTwo.length)];
 
+    if (singularOrPlural === 0) {
+        subject = pluralEntityOne[Math.floor(Math.random() * pluralEntityOne.length)];
+        switch (pastOrFuture) {
+            case 0:
+                connector = connectorsPluralPast[Math.floor(Math.random() * connectorsPluralPast.length)];
+                break;
+            default:
+                connector = connectorsPluralFuture[Math.floor(Math.random() * connectorsPluralFuture.length)];
+        }
+    } else {
+        subject = singularEntityOne[Math.floor(Math.random() * singularEntityOne.length)];
+        switch (pastOrFuture) {
+            case 0:
+                connector = connectorsSingularPast[Math.floor(Math.random() * connectorsSingularPast.length)];
+                break;
+            default:
+                connector = connectorsSingularFuture[Math.floor(Math.random() * connectorsSingularFuture.length)];
+        }
+    }
+
+    return 'I have intercepted some chatter; ' +  subject + ' ' + connector + ' ' + verb.concat(pastOrFuture === 0 ? (verb.endsWith('e') ? 'd':'ed'):'') + ' ' + object + '.';
+
+}
 //console.log('I have intercepted some chatter; ' + pluralEntityOne[0].concat(' ', connectorsPluralPast[0], ' ', verbs[15], (verbs[15].endsWith('e') ? 'd':'ed'), ' ', entityTwo[25], '.'));
+//console.log(Math.floor(Math.random() * 2));
+
+console.log(spyMessage());
