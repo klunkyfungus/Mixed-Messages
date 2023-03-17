@@ -17,7 +17,7 @@ This program randomly generates messages containing secret activities and plots 
 
 ## Usage
 
-Copy and paste this code into a blank .js file on your code editor and run using Node.js.
+Download this file or copy and paste this code into a blank .js file on your code editor and run using Node.js.
 
 ## Technology Used
 
