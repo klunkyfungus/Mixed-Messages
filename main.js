@@ -44,4 +44,16 @@ const spyMessage = () => {
 //console.log('I have intercepted some chatter; ' + pluralEntityOne[0].concat(' ', connectorsPluralPast[0], ' ', verbs[15], (verbs[15].endsWith('e') ? 'd':'ed'), ' ', entityTwo[25], '.'));
 //console.log(Math.floor(Math.random() * 2));
 
+
+console.log(`
+          IIIII              SSSS           PPPPPPPPPP     YYY         YYY         !!!
+           II             SSS    SSS       PPP      PPP     YY        YY          !!!
+          II           SSS                PPP       PP       YY     YY           !!!
+         II            SSSS              PP       PP          YY  YY            !!!
+        II                SSSS          PPPPPPPPPP             YYY             !!! 
+       II                     SSS      PPP                     YY             !!!
+      II             SSS    SSSS      PPP                     YY
+    IIIII               SSSS         PPP                     YY             !!!  
+                        
+`);
 console.log(spyMessage());
