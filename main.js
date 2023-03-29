@@ -9,6 +9,10 @@ const connectorsSingularPast = ['has already completely', 'has already'];
 const connectorsPluralFuture = ['are conspiring to','are plotting to', 'are planning to', 'intend to', 'have resolved to', 'aim to', 'are attempting to', 'have designs to', 'are determined to', 'endeavor to', 'scheme to'];
 const connectorsPluralPast = ['have already completely', 'have already'];
 const verbs = ['ruin', 'destroy', 'inseminate', 'infiltrate', 'blow up', 'overthrow', 'seize', 'destabilize', 'uncover', 'defend', 'follow', 're-create', 'inform', 'irritate', 'clean', 'melt', 'provide', 'reduce', 'retire', 'surprise', 'taste', 'desert', 'hijack', 'pickpocket', 'offend', 'smuggle', 'terrorize', 'vandalize', 'aid', 'sniff', 'insult', 'move', 'kill', 'replace', 'antagonize'];
+const button = document.getElementById("message_button");
+const message = document.getElementById("message");
+const title = document.getElementById("title_display")
+
 
 //Function that formulates the messages.
 const spyMessage = () => {
@@ -45,10 +49,14 @@ const spyMessage = () => {
     }
 
     //The output message. Contains an expression to adjust the tense of the selected verb based on the determination of the const variable above.
-    return 'I have intercepted some chatter; ' +  subject + ' ' + connector + ' ' + verb.concat(pastOrFuture === 0 ? (verb.endsWith('e') ? 'd':'ed'):'') + ' ' + object + '.';
-
+    let message_text = 'I have intercepted some chatter; ' +  subject + ' ' + connector + ' ' + verb.concat(pastOrFuture === 0 ? (verb.endsWith('e') ? 'd':'ed'):'') + ' ' + object + '.';
+    message.innerHTML = message_text;
+    
 };
 
+button.addEventListener("click", spyMessage);
+
+/*
 console.log(`
           IIIII              SSSS           PPPPPPPPPP     YYY         YYY         !!!
            II             SSS    SSS       PPP      PPP     YY        YY          !!!
@@ -61,3 +69,4 @@ console.log(`
                         
 `);
 console.log(spyMessage());
+*/
