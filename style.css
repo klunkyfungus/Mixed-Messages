@@ -94,7 +94,7 @@ h1 {
 
 #message {
     animation: 
-        4s animated-text steps(50) 2s both,
+        4s animated-text steps(50) 1s both,
         400ms animated-cursor steps(50) infinite;
 }
 
