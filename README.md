@@ -17,8 +17,9 @@ This program randomly generates messages containing secret activities and plots 
 
 ## Usage
 
-Download this file or copy and paste this code into a blank .js file on your code editor and run using Node.js.
+Visit the following webpage to try out this program: 
+https://klunkyfungus.github.io/Mixed-Messages/
 
 ## Technology Used
 
-This program was created using only JavaScript.
+This program was created using HTML, CSS, & JavaScript.
