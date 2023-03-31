@@ -20,6 +20,10 @@ body {
 
 span {
     color: white;
+    font-size: 1.2rem;
+    letter-spacing: .1rem; 
+    font-weight: bold;
+    text-shadow: 0px 2px 1px black;
 }
 
 #background_overlay {
@@ -95,13 +99,14 @@ h1 {
 }
 
 button {
-    padding: .5rem 1rem;
-    margin: 2rem 0 1rem 0;
+    padding: 1rem 2rem;
+    margin: 3rem 0 1.5rem 0;
     background-color: red;
-    border: .15rem outset darkkhaki; 
+    border: .3rem outset darkkhaki; 
     color: black;
-    font-size: .83rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    letter-spacing: .1rem;
 }
 
 button:hover {
@@ -109,10 +114,10 @@ button:hover {
 }
 
 button:active {
-    border: .25rem inset darkkhaki; 
-    padding: .45rem .9rem;
-    margin: 2.05rem 0 1rem 0;
-    font-size: .8rem;
-    
+    border: .45rem inset darkkhaki; 
+    padding: 1rem 2rem;
+    margin: 3rem 0 1.5rem 0;
+    font-size: 1rem;
+    transition-delay: .01s;
     
 }

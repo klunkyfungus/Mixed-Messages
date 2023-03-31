@@ -27,6 +27,7 @@ const spyMessage = () => {
     let verb = verbs[Math.floor(Math.random() * verbs.length)];
     let object = entityTwo[Math.floor(Math.random() * entityTwo.length)];
     message.removeAttribute("class");
+    message.innerHTML = "";
     
     //Condition statements that select appropriate nouns and sentence elements based on the determination of the const variables above.
     if (singularOrPlural === 0) {
