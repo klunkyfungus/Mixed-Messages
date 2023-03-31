@@ -1,6 +1,7 @@
 * { 
     margin: 0; padding: 0; 
-    z-index: 0;
+    z-index: 2;
+    
 }
 
 body { 
@@ -13,27 +14,105 @@ body {
     display: flex;
     flex-flow: column;
     align-items: center;
-    
+    z-index: 0;
+    position: relative;
 } 
+
+span {
+    color: white;
+}
+
+#background_overlay {
+    width: 100%;
+    height: 64.7rem;
+    z-index: 1;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+}
 
 h1 {
     display: none;
 }
 
-#title_display {
-    padding: 10rem 0;
+#title_display img {
+    margin: 10rem 0; 
+    border: .5rem double darkkhaki;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 1px 3px 10px 10px darkred;
+}
+
+#message_box {
+    width: 85%;
+    background-color: black;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #message {
-    line-height: 1.25rem;
-    margin: 5rem 0 5rem 0;
-    border: solid red;
-    padding: .5rem;
-    background-color: white;
+    
+    min-height: 1.75rem;
+    line-height: 1.75rem;
+    border-right: .3rem solid green;
+    background-color: none;
     font-size: 1.5rem;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .12rem;  
+    max-width: fit-content;
+    
+}
+
+@keyframes animated-text{
+  0% { 
+    width: 0;
+    
+}
+  100% { 
+    width: 100%;
+    
+}
+}
+
+
+@keyframes animated-cursor{
+  from {
+    border-right-color: green;
+}
+  to {
+    border-right-color: transparent;
+}
+}
+
+#message {
+    animation: 
+        4s animated-text steps(50) 2s both,
+        400ms animated-cursor steps(50) infinite;
 }
 
 button {
-    padding: .5rem;
-    margin-bottom: 2rem;
+    padding: .5rem 1rem;
+    margin: 2rem 0 1rem 0;
+    background-color: red;
+    border: .15rem outset darkkhaki; 
+    color: black;
+    font-size: .83rem;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    border: .25rem inset darkkhaki; 
+    padding: .45rem .9rem;
+    margin: 2.05rem 0 1rem 0;
+    font-size: .8rem;
+    
+    
 }

@@ -26,7 +26,8 @@ const spyMessage = () => {
     let connector;
     let verb = verbs[Math.floor(Math.random() * verbs.length)];
     let object = entityTwo[Math.floor(Math.random() * entityTwo.length)];
-
+    message.removeAttribute("class");
+    
     //Condition statements that select appropriate nouns and sentence elements based on the determination of the const variables above.
     if (singularOrPlural === 0) {
         subject = pluralEntityOne[Math.floor(Math.random() * pluralEntityOne.length)];
@@ -49,9 +50,9 @@ const spyMessage = () => {
     }
 
     //The output message. Contains an expression to adjust the tense of the selected verb based on the determination of the const variable above.
-    let message_text = 'I have intercepted some chatter; ' +  subject + ' ' + connector + ' ' + verb.concat(pastOrFuture === 0 ? (verb.endsWith('e') ? 'd':'ed'):'') + ' ' + object + '.';
+    let message_text = 'We have intercepted some chatter; ' +  subject + ' ' + connector + ' ' + verb.concat(pastOrFuture === 0 ? (verb.endsWith('e') ? 'd':'ed'):'') + ' ' + object + '.';
     message.innerHTML = message_text;
-    
+    message.getAnimations({ subtree: true })[0].play();
 };
 
 button.addEventListener("click", spyMessage);
