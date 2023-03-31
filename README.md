@@ -22,4 +22,4 @@ https://klunkyfungus.github.io/Mixed-Messages/
 
 ## Technology Used
 
-This program was created using HTML, CSS, & JavaScript.
+This program was created using HTML, CSS, & JavaScript along with Git Devops.
