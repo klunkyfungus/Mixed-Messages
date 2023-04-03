@@ -8,10 +8,12 @@ const connectorsSingularFuture = ['is conspiring to', 'is plotting to', 'is plan
 const connectorsSingularPast = ['has already completely', 'has already'];
 const connectorsPluralFuture = ['are conspiring to','are plotting to', 'are planning to', 'intend to', 'have resolved to', 'aim to', 'are attempting to', 'have designs to', 'are determined to', 'endeavor to', 'scheme to'];
 const connectorsPluralPast = ['have already completely', 'have already'];
-const verbs = ['ruin', 'destroy', 'inseminate', 'infiltrate', 'blow up', 'overthrow', 'seize', 'destabilize', 'uncover', 'defend', 'follow', 're-create', 'inform', 'irritate', 'clean', 'melt', 'provide', 'reduce', 'retire', 'surprise', 'taste', 'desert', 'hijack', 'pickpocket', 'offend', 'smuggle', 'terrorize', 'vandalize', 'aid', 'sniff', 'insult', 'move', 'kill', 'replace', 'antagonize'];
+const verbs = ['ruin', 'destroy', 'inseminate', 'infiltrate', 'blast', 'kablooey', 'overthrow', 'seize', 'destabilize', 'uncover', 'defend', 'follow', 're-create', 'inform', 'irritate', 'clean', 'melt', 'provide', 'reduce', 'retire', 'surprise', 'taste', 'desert', 'hijack', 'pickpocket', 'offend', 'smuggle', 'terrorize', 'vandalize', 'aid', 'sniff', 'insult', 'move', 'kill', 'replace', 'antagonize'];
 const button = document.getElementById("message_button");
 const message = document.getElementById("message");
-const title = document.getElementById("title_display")
+const typewriter = message.getAnimations({ subtree: true })[0];
+const chatter = document.getElementById("chatter_message");
+const blink = chatter.getAnimations({ subtree: true })[0];
 
 
 //Function that formulates the messages.
@@ -26,8 +28,14 @@ const spyMessage = () => {
     let connector;
     let verb = verbs[Math.floor(Math.random() * verbs.length)];
     let object = entityTwo[Math.floor(Math.random() * entityTwo.length)];
-    message.removeAttribute("class");
+    chatter.innerHTML = "";
     message.innerHTML = "";
+    typewriter.finish();
+    blink.finish();
+    
+    
+    
+    
     
     //Condition statements that select appropriate nouns and sentence elements based on the determination of the const variables above.
     if (singularOrPlural === 0) {
@@ -51,9 +59,11 @@ const spyMessage = () => {
     }
 
     //The output message. Contains an expression to adjust the tense of the selected verb based on the determination of the const variable above.
-    let message_text = 'We have intercepted some chatter; ' +  subject + ' ' + connector + ' ' + verb.concat(pastOrFuture === 0 ? (verb.endsWith('e') ? 'd':'ed'):'') + ' ' + object + '.';
+    let message_text = subject + ' ' + connector + ' ' + verb.concat(pastOrFuture === 0 ? (verb.endsWith('e') ? 'd':'ed'):'') + ' ' + object + '.';
+    chatter.innerHTML = "We have intercepted some chatter:";
     message.innerHTML = message_text;
-    message.getAnimations({ subtree: true })[0].play();
+    blink.play();
+    typewriter.play();
 };
 
 button.addEventListener("click", spyMessage);

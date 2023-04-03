@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I-SPY - Mixed Messages</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Rajdhani:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="background_overlay">
@@ -14,11 +17,14 @@
     <div id="title_display">
         <img src="./assets/title.PNG" alt="">
     </div>
+    <div id="chatter_message_box">
+        <span id="chatter_message"></span>
+    </div>
     <div id="message_box">
         <span id="message"></span>
     </div>
     <button id="message_button">Click Here</button>
-    <span>Welcome to I-SPY! Hit the button above to see new reporting on secret messages.</span>
-    <script src="./main.js" async></script>
+    <span id="directions">Welcome to I-SPY! Hit the button above to see new reporting on secret messages.</span>
+    <script src="./main.js" defer></script>
 </body>
 </html>

@@ -1,14 +1,14 @@
 * { 
     margin: 0; padding: 0; 
     z-index: 2;
-    
+    font-family: 'Open Sans', sans-serif;
 }
 
 body { 
     width: 100%; 
-    height: 64.7rem;
+    height: 100vh;
     background-image: url("./assets/steve-harvey-l0V2dqXW_mI-unsplash.svg");
-    background-position: unset;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -16,19 +16,27 @@ body {
     align-items: center;
     z-index: 0;
     position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
 } 
 
 span {
     color: white;
     font-size: 1.2rem;
     letter-spacing: .1rem; 
-    font-weight: bold;
     text-shadow: 0px 2px 1px black;
+}
+
+#directions {
+    width: 100%;
+    text-align: center;
+    background: rgba(255,0,0,.5);
+    padding: .2rem 0;
 }
 
 #background_overlay {
     width: 100%;
-    height: 64.7rem;
+    height: 100vh;
     z-index: 1;
     position: absolute;
     background: rgba(0, 0, 0, 0.3);
@@ -46,29 +54,56 @@ h1 {
     box-shadow: 1px 3px 10px 10px darkred;
 }
 
-#message_box {
-    width: 85%;
+#chatter_message_box {
+    width: 28.5rem;
     background-color: black;
-    height: 3rem;
+    min-height: 2rem;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 25.4%;
+    margin-bottom: 1rem;
+    
+}
+
+#chatter_message {
+    color: black;
+    margin: 0 .75rem;
+    font-weight: lighter;
+    letter-spacing: .2em;
+}
+
+#message_box {
+    width: 86.4%;
+    background-color: black;
+    min-height: 3rem;
+    display: flex;
     align-items: center;
 }
 
-#message {
-    
+#message { 
     min-height: 1.75rem;
     line-height: 1.75rem;
     border-right: .3rem solid green;
     background-color: none;
-    font-size: 1.5rem;
-    color: white;
+    font-size: 1.3rem;
+    color: rgb(7,217,83);
     overflow: hidden;
     white-space: nowrap;
-    margin: 0 auto;
+    margin: 0 .5rem;
     letter-spacing: .12rem;  
     max-width: fit-content;
-    
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+}
+
+@keyframes chatter-blink {
+    from {
+        color: black;
+}
+    to {
+        color: rgb(7,217,83);
+    }
 }
 
 @keyframes animated-text{
@@ -77,8 +112,7 @@ h1 {
     
 }
   100% { 
-    width: 100%;
-    
+    width: 100%; 
 }
 }
 
@@ -92,21 +126,29 @@ h1 {
 }
 }
 
+#chatter_message {
+    animation: .5s chatter-blink steps(50) .15s 4 both;
+}
+
 #message {
     animation: 
-        4s animated-text steps(50) 1s both,
+        4s animated-text steps(50) 4.15s both,
         400ms animated-cursor steps(50) infinite;
 }
 
 button {
     padding: 1rem 2rem;
-    margin: 3rem 0 1.5rem 0;
+    margin: 9rem 0 4rem 0;
     background-color: red;
-    border: .3rem outset darkkhaki; 
-    color: black;
+    border-radius: 2rem;
+    border: .1rem solid darkkhaki; 
+    color: darkkhaki;
     font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: .1rem;
+    background-color: rgba(255,0,0,.7);
+    text-shadow: 0px 2px 1px black;
+   
 }
 
 button:hover {
@@ -114,10 +156,12 @@ button:hover {
 }
 
 button:active {
-    border: .45rem inset darkkhaki; 
-    padding: 1rem 2rem;
-    margin: 3rem 0 1.35rem 0;
-    font-size: 1rem;
-    transition-delay: .01s;
+    border: .18rem inset darkkhaki; 
+    padding: 1.1rem 1.95rem .9rem 1.85rem;
+    letter-spacing: .15rem;
+    margin: 9rem 0 4.05rem 0;
+    font-size: 1.1rem;
+    transition-delay: 0s;
+    text-shadow: none;
     
 }
