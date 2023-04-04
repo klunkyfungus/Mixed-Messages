@@ -9,11 +9,20 @@ const connectorsSingularPast = ['has already completely', 'has already'];
 const connectorsPluralFuture = ['are conspiring to','are plotting to', 'are planning to', 'intend to', 'have resolved to', 'aim to', 'are attempting to', 'have designs to', 'are determined to', 'endeavor to', 'scheme to'];
 const connectorsPluralPast = ['have already completely', 'have already'];
 const verbs = ['ruin', 'destroy', 'inseminate', 'infiltrate', 'blast', 'kablooey', 'overthrow', 'seize', 'destabilize', 'uncover', 'defend', 'follow', 're-create', 'inform', 'irritate', 'clean', 'melt', 'provide', 'reduce', 'retire', 'surprise', 'taste', 'desert', 'hijack', 'pickpocket', 'offend', 'smuggle', 'terrorize', 'vandalize', 'aid', 'sniff', 'insult', 'move', 'kill', 'replace', 'antagonize'];
+
 const button = document.getElementById("message_button");
 const message = document.getElementById("message");
 const typewriter = message.getAnimations({ subtree: true })[0];
 const chatter = document.getElementById("chatter_message");
 const blink = chatter.getAnimations({ subtree: true })[0];
+
+//Function that ends certain animations running on the webpage.
+const endAnimations = () => {
+    chatter.innerHTML = "";
+    message.innerHTML = "";  
+    typewriter.finish();
+    blink.finish();
+};
 
 
 //Function that formulates the messages.
@@ -27,15 +36,7 @@ const spyMessage = () => {
     let subject;
     let connector;
     let verb = verbs[Math.floor(Math.random() * verbs.length)];
-    let object = entityTwo[Math.floor(Math.random() * entityTwo.length)];
-    chatter.innerHTML = "";
-    message.innerHTML = "";
-    typewriter.finish();
-    blink.finish();
-    
-    
-    
-    
+    let object = entityTwo[Math.floor(Math.random() * entityTwo.length)];  
     
     //Condition statements that select appropriate nouns and sentence elements based on the determination of the const variables above.
     if (singularOrPlural === 0) {
@@ -66,7 +67,8 @@ const spyMessage = () => {
     typewriter.play();
 };
 
-button.addEventListener("click", spyMessage);
+button.addEventListener("mousedown", endAnimations);
+button.addEventListener("mouseup", spyMessage);
 
 /*
 console.log(`
