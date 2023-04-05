@@ -94,17 +94,22 @@ h1 {
 #message { 
     min-height: 1.75rem;
     line-height: 1.75rem;
-    border-right: .3rem solid green;
     background-color: none;
     font-size: 1.3rem;
     color: rgb(7,217,83);
     overflow: hidden;
     white-space: nowrap;
-    margin: 0 .5rem;
+    margin-left: .5rem;
     letter-spacing: .12rem;  
     max-width: fit-content;
     font-family: 'Rajdhani', sans-serif;
     font-weight: bold;
+}
+
+#cursor {
+    border-right: .3rem solid green;
+    height: 1.75rem;  
+    margin-right: .5rem;
 }
 
 @keyframes chatter-blink {
@@ -146,6 +151,11 @@ h1 {
         400ms animated-cursor steps(50) infinite;
 }
 
+#cursor {
+    animation: 
+        400ms animated-cursor steps(50) infinite;
+}
+
 button {
     padding: 1rem 2rem;
     margin: 9rem 0 .08rem 0;
@@ -158,6 +168,7 @@ button {
     letter-spacing: .1rem;
     background-color: rgba(255,0,0,.7);
     text-shadow: 0px 2px 1px black;
+    transition-delay: .1s;
 }
 
 button:hover {
@@ -172,4 +183,84 @@ button:active {
     font-size: 1.1rem;
     transition-delay: 0s;
     text-shadow: none;  
+}
+
+@media only screen and (max-width: 955px) and (min-width: 600px) {
+    #chatter_message_box {
+        position: static;   
+    }
+    
+    #message {
+        overflow: auto;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        text-overflow: ellipsis;
+    }
+    
+    button, button:active {
+        margin-top: 11rem;
+    }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 800px) {
+    #title_display img {
+        margin: 5rem 0 8rem 0;
+    }
+    
+    button, button:active {
+        margin-top: 7rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #title_display img {
+        margin: 13% 0 20% 0;
+    }
+    
+    #chatter_message_box {
+        position: static;   
+        width: fit-content;
+        justify-content: center;
+    }
+    
+    #chatter_message {
+        font-size: 1rem;
+        letter-spacing: .1rem;
+    }
+    
+    #message {
+        overflow: auto;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        text-overflow: ellipsis;
+        font-size: 1.2rem
+    }
+    
+    button, button:active {
+        margin-top: 40%;
+        margin-bottom: 10%;
+    }
+    
+    #directions {
+        top: 85vh;
+        font-size: 1rem;
+    }   
+}
+
+@media only screen and (orientation: landscape) and (max-width: 800px) {
+    #title_display img {
+        margin: 2% 0 5% 0;
+        height: 30vh;
+        width: auto;
+    }
+    
+     button, button:active {
+        margin-top: 4%;
+        margin-bottom: 5%;
+    }
+    
+    #directions {
+        top: 85vh;
+        font-size: 1rem;
+    }   
 }
