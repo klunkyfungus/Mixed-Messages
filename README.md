@@ -17,7 +17,7 @@ This program randomly generates messages containing secret activities and plots 
 
 ## Usage
 
-Visit the following webpage to try out this program: 
+Visit the following webpage on a computer, phone, or tablet to try out this program:
 https://klunkyfungus.github.io/Mixed-Messages/
 
 ## Technology Used
