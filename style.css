@@ -264,6 +264,10 @@ button:active {
         -o-text-overflow: ellipsis;
            text-overflow: ellipsis;
     }
+
+    #cursor {
+        margin-bottom: .8rem;
+    }
     
     button, button:active {
         margin-top: 11rem;
@@ -307,6 +311,10 @@ button:active {
         -o-text-overflow: ellipsis;
            text-overflow: ellipsis;
         font-size: 1.2rem
+    }
+
+    #cursor {
+        margin-bottom: .8rem;
     }
     
     button, button:active {
