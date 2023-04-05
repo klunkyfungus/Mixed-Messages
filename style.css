@@ -1,8 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * { 
     margin: 0; padding: 0; 
     z-index: 2;
     font-family: 'Open Sans', sans-serif;
-    flex-shrink: 2;
 }
 
 body { 
@@ -13,9 +19,16 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index: 0;
     position: relative;
 } 
@@ -51,8 +64,12 @@ h1 {
 }
 
 #title_display {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #title_display img {
@@ -60,7 +77,8 @@ h1 {
     border: .5rem double darkkhaki;
     border-radius: 2rem;
     overflow: hidden;
-    box-shadow: 1px 3px 10px 10px darkred;
+    -webkit-box-shadow: 1px 3px 10px 10px darkred;
+            box-shadow: 1px 3px 10px 10px darkred;
     width: 90%;
     height: auto;
 }
@@ -69,8 +87,12 @@ h1 {
     width: 28.5rem;
     background-color: black;
     min-height: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     right: 25.4%;
     margin-bottom: 1rem;
@@ -87,8 +109,12 @@ h1 {
     width: 86.4%;
     background-color: black;
     min-height: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #message { 
@@ -101,6 +127,8 @@ h1 {
     white-space: nowrap;
     margin-left: .5rem;
     letter-spacing: .12rem;  
+    max-width: -webkit-fit-content;  
+    max-width: -moz-fit-content;  
     max-width: fit-content;
     font-family: 'Rajdhani', sans-serif;
     font-weight: bold;
@@ -112,6 +140,15 @@ h1 {
     margin-right: .5rem;
 }
 
+@-webkit-keyframes chatter-blink {
+    from {
+        color: black;
+}
+    to {
+        color: rgb(7,217,83);
+    }
+}
+
 @keyframes chatter-blink {
     from {
         color: black;
@@ -121,6 +158,16 @@ h1 {
     }
 }
 
+@-webkit-keyframes animated-text{
+  0% { 
+    width: 0;
+    
+}
+  100% { 
+    width: 100%; 
+}
+}
+
 @keyframes animated-text{
   0% { 
     width: 0;
@@ -128,6 +175,16 @@ h1 {
 }
   100% { 
     width: 100%; 
+}
+}
+
+
+@-webkit-keyframes animated-cursor{
+  from {
+    border-right-color: green;
+}
+  to {
+    border-right-color: transparent;
 }
 }
 
@@ -142,17 +199,23 @@ h1 {
 }
 
 #chatter_message {
-    animation: .5s chatter-blink steps(50) .15s 4 both;
+    -webkit-animation: .5s chatter-blink steps(50) .15s 4 both;
+            animation: .5s chatter-blink steps(50) .15s 4 both;
 }
 
 #message {
-    animation: 
+    -webkit-animation: 
+        4s animated-text steps(50) 4.15s both,
+        400ms animated-cursor steps(50) infinite;
+            animation: 
         4s animated-text steps(50) 4.15s both,
         400ms animated-cursor steps(50) infinite;
 }
 
 #cursor {
-    animation: 
+    -webkit-animation: 
+        400ms animated-cursor steps(50) infinite;
+            animation: 
         400ms animated-cursor steps(50) infinite;
 }
 
@@ -168,7 +231,9 @@ button {
     letter-spacing: .1rem;
     background-color: rgba(255,0,0,.7);
     text-shadow: 0px 2px 1px black;
-    transition-delay: .1s;
+    -webkit-transition-delay: .1s;
+         -o-transition-delay: .1s;
+            transition-delay: .1s;
 }
 
 button:hover {
@@ -181,7 +246,9 @@ button:active {
     letter-spacing: .09rem;
     margin: 9rem 0 0.04rem 0;
     font-size: 1.1rem;
-    transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+         -o-transition-delay: 0s;
+            transition-delay: 0s;
     text-shadow: none;  
 }
 
@@ -194,7 +261,8 @@ button:active {
         overflow: auto;
         padding-top: .75rem;
         padding-bottom: .75rem;
-        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
     }
     
     button, button:active {
@@ -219,8 +287,12 @@ button:active {
     
     #chatter_message_box {
         position: static;   
+        width: -webkit-fit-content;   
+        width: -moz-fit-content;   
         width: fit-content;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
     
     #chatter_message {
@@ -232,7 +304,8 @@ button:active {
         overflow: auto;
         padding-top: .75rem;
         padding-bottom: .75rem;
-        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
         font-size: 1.2rem
     }
     
