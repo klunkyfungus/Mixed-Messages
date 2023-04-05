@@ -291,9 +291,7 @@ button:active {
     
     #chatter_message_box {
         position: static;   
-        width: -webkit-fit-content;   
-        width: -moz-fit-content;   
-        width: fit-content;
+        width: 21rem;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center;

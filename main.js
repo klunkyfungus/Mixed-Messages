@@ -67,6 +67,8 @@ const spyMessage = () => {
     typewriter.play();
 };
 
+button.addEventListener("touchstart", endAnimations);
+button.addEventListener("touchend", spyMessage);
 button.addEventListener("mousedown", endAnimations);
 button.addEventListener("mouseup", spyMessage);
 
