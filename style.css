@@ -261,8 +261,6 @@ button:active {
         overflow: auto;
         padding-top: .75rem;
         padding-bottom: .75rem;
-        -o-text-overflow: ellipsis;
-           text-overflow: ellipsis;
     }
 
     #cursor {
@@ -306,8 +304,6 @@ button:active {
         overflow: auto;
         padding-top: .75rem;
         padding-bottom: .75rem;
-        -o-text-overflow: ellipsis;
-           text-overflow: ellipsis;
         font-size: 1.2rem
     }
 
